@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 
@@ -16,12 +17,10 @@ namespace MVC.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Login()
         {
-            return Challenge(new AuthenticationProperties
-            {
-                RedirectUri = "/Home/index"
-            }, "oidc");
+            return View();
         }
 
         public IActionResult About()
