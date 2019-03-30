@@ -17,9 +17,9 @@ namespace IdentitySeverSample
                     ClientId ="mvc",
                     ClientName="MVC Demo",
                     AllowedGrantTypes = GrantTypes.Implicit,
-                    RedirectUris ={ "http://localhost:62104/signin-oidc" },
-                    AllowedScopes={ "openid","email","office","profile"}
-
+                    RedirectUris ={ "http://localhost:62531/signin-oidc" },
+                    AllowedScopes={ "openid","email","office","profile"},
+                    PostLogoutRedirectUris = { "http://localhost:62531/signout-callback-oidc" },
                 }
 
             };
